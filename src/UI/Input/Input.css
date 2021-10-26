@@ -1,0 +1,75 @@
+.Input {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 5em;
+  /* border: 1px solid red; */
+}
+
+.Input span {
+  position: absolute;
+  font-size: 16px;
+  top: 32%;
+  left: 7px;
+  z-index: 5;
+  pointer-events: none;
+  color: #444444;
+  transition: 0.5s;
+}
+
+.Input input {
+  position: absolute;
+  /* background: transparent; */
+  top: 25%;
+  font-size: 18px;
+  height: 40%;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  /* border-bottom: 1px solid black; */
+  padding: 5px;
+}
+
+.Input div {
+  position: absolute;
+  left: 0;
+  top: 62%;
+  height: 3px;
+  width: 0%;
+  transition: 0.5s;
+  background-color: #fe960f;
+  z-index: 5;
+}
+
+.Input p {
+  position: absolute;
+  top: 65%;
+  font-size: 14px;
+  left: 7px;
+  color: #d8210b;
+}
+
+.Input input:focus ~ span {
+  top: 0;
+  left: 0;
+  color: #fe960f;
+  /* font-size: 14px; */
+}
+
+.focused ~ span {
+  top: 0;
+  left: 0;
+  color: #fe960f;
+  /* font-size: 14px; */
+}
+
+.Input input:focus ~ div {
+  width: 100%;
+}
+
+.focused ~ div {
+  width: 100%;
+}

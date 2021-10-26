@@ -1,0 +1,91 @@
+.navigationItem a,
+.toggleMenuItems a,
+.sidedrawerMenu a {
+  text-decoration: none;
+  font-family: "Bebas Neue";
+}
+
+.navigationItem {
+  margin: 0 15px;
+}
+
+.navigationItem a {
+  color: #eff2f4;
+  font-size: 20px;
+}
+
+.navigationItem a:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 0;
+  bottom: 3px;
+  height: 2px;
+  width: 0;
+  border-radius: 5px;
+  background-color: #eff2f4;
+  transition: 0.3s ease-out;
+}
+
+.navigationItem a:hover:after,
+.navigationItem a:hover,
+.navigationItem a:active,
+.navigationItem a.active,
+.navigationItem a.active::after {
+  color: #c4ebef;
+  width: 100%;
+}
+
+.toggleMenuItems {
+  position: relative;
+  top: 10px;
+  margin: auto;
+  padding: 5px;
+  width: 7em;
+  height: 1.6em;
+  border-radius: 3px;
+}
+
+.toggleMenuItems a {
+  display: inline-block;
+  position: relative;
+  width: 5.6em;
+  height: 1.6em;
+  color: #229cb4;
+  font-size: 20px;
+}
+
+.toggleMenuItems:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sidedrawerMenu {
+  position: relative;
+  width: 180px;
+  top: 20px;
+  left: 10px;
+  margin: 20px 0;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.sidedrawerMenu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidedrawerMenu a {
+  display: inline-block;
+  color: #229cb4;
+  font-size: 22px;
+  width: 180px;
+}
+
+@media (max-width: 300px) {
+  .sidedrawerMenu {
+    width: 150px;
+  }
+
+  .sidedrawerMenu a {
+    width: 150px;
+  }
+}
