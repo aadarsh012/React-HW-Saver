@@ -19,9 +19,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: form 0.5s linear forwards;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+.Register .registerForm {
   height: 29em;
   width: 29em;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+@keyframes form {
+  0% {
+    opacity: 0;
+    transform: scale(90%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+.Register .loginForm {
+  height: 24em;
+  width: 29em;
 }
 
 .Register form h2 {
@@ -29,51 +49,53 @@
   margin-bottom: 5px;
 }
 
-.Register form button {
-  margin: 5px 0;
-  background-color: #fe960f;
-  color: #0b0a10;
-  box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.9);
-}
-
 .Register form > span {
   color: #fe960f;
   font-size: 15px;
 }
 
-.Register .Input {
-  width: 24em;
-}
-
 .Register button {
+  margin: 5px 0;
+  background-color: #fe960f;
+  color: #0b0a10;
+  box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.9);
   height: 2em;
   width: 24em;
   border: none;
   outline: none;
-  background-color: azure;
   border-radius: 2px;
+  font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .Register button:hover {
   background-color: #ffa42c;
 }
 
+.switchAuth {
+  color: #5a4f9b;
+  cursor: pointer;
+}
+
+.error {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  left: 10px;
+  color: #e73c35;
+}
+
 @media (max-width: 500px) {
-  .Register form {
+  .Register .registerForm {
     height: 23em;
     width: 23em;
   }
 
-  .Register .Input {
-    width: 20.5em;
-    font-size: 14px;
-  }
-
-  .Register .Input span {
-    top: 30%;
-    font-size: 13px;
+  .Register .loginForm {
+    height: 20em;
+    width: 23em;
   }
 
   .Register button {
@@ -88,19 +110,14 @@
 }
 
 @media (max-width: 400px) {
-  .Register form {
+  .Register .registerForm {
     height: 20em;
     width: 20em;
   }
 
-  .Register .Input {
-    width: 21.5em;
-    font-size: 12px;
-  }
-
-  .Register .Input span {
-    top: 29%;
-    font-size: 11px;
+  .Register .loginForm {
+    height: 18em;
+    width: 20em;
   }
 
   .Register button {
