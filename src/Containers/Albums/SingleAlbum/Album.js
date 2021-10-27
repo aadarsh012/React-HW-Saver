@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import classes from "./Album.module.css";
+import Layout from "../../../Components/Layout/Layout";
 import Loading from "../../../UI/ScheletonLoading/Loading";
 const Album = (props) => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      props.history.replace("/");
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,9 +41,11 @@ const Album = (props) => {
   });
 
   return (
-    <div className={classes.Album}>
-      {loading ? <Loading /> : <div className={classes.PhotosGrid}>{photosGrid}</div>}
-    </div>
+    <Layout>
+      <div className={classes.Album}>
+        {loading ? <Loading /> : <div className={classes.PhotosGrid}>{photosGrid}</div>}
+      </div>
+    </Layout>
   );
 };
 export default Album;

@@ -12,6 +12,12 @@ const Register = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    if (localStorage.getItem("token")) {
+      props.history.replace("/home");
+    }
+  }, []);
+
+  useEffect(() => {
     setEmail("");
     setUsername("");
     setPassword("");
@@ -47,6 +53,7 @@ const Register = (props) => {
           { email, password, returnSecureToken: true }
         );
         localStorage.setItem("token", response.data.idToken);
+        props.history.replace("/home");
       } catch (error) {
         setError("Email exists. Please Login.");
         setTimeout(() => {
@@ -71,6 +78,7 @@ const Register = (props) => {
           { email, password, returnSecureToken: true }
         );
         localStorage.setItem("token", response.data.idToken);
+        props.history.replace("/home");
       } catch (error) {
         setError("Invalid Email or Password.");
         setTimeout(() => {

@@ -1,5 +1,6 @@
 import "./Images.css";
 import { useEffect, useState } from "react";
+import Layout from "../../Components/Layout/Layout";
 import Spinner from "../../UI/Spinner/Spinner";
 
 const Images = (props) => {
@@ -8,6 +9,12 @@ const Images = (props) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   console.log(props);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      props.history.replace("/");
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,23 +69,25 @@ const Images = (props) => {
   });
 
   return (
-    <div className="Images">
-      <div className="Search">
-        <form onSubmit={searchHandler}>
-          <input
-            type="search"
-            placeholder="Search Images."
-            onChange={(event) => setSearch(event.target.value)}
-            value={search}
-          />
-          <button type="submit">
-            <i className="fas fa-search"></i>
-          </button>
-        </form>
-        <span className="Error">{error}</span>
+    <Layout>
+      <div className="Images">
+        <div className="Search">
+          <form onSubmit={searchHandler}>
+            <input
+              type="search"
+              placeholder="Search Images."
+              onChange={(event) => setSearch(event.target.value)}
+              value={search}
+            />
+            <button type="submit">
+              <i className="fas fa-search"></i>
+            </button>
+          </form>
+          <span className="Error">{error}</span>
+        </div>
+        {loading ? <Spinner /> : <div className="ImageGrid">{imageGrid}</div>}
       </div>
-      {loading ? <Spinner /> : <div className="ImageGrid">{imageGrid}</div>}
-    </div>
+    </Layout>
   );
 };
 export default Images;

@@ -1,5 +1,6 @@
 import "./Home.css";
 import { useState, useEffect } from "react";
+import Layout from "../../Components/Layout/Layout";
 import Spinner from "../../UI/Spinner/Spinner";
 
 const Home = (props) => {
@@ -9,6 +10,12 @@ const Home = (props) => {
   const [mediaType, setMediaType] = useState("");
   const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      props.history.replace("/");
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,28 +37,30 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div className="Home">
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <div className="Image">
-            <img src={url} alt="Nasa Picture of the day." />
-          </div>
-          <div className="Details">
-            <div className="Title">
-              <span>{title}</span>
+    <Layout>
+      <div className="Home">
+        {loading ? (
+          <Spinner />
+        ) : (
+          <>
+            <div className="Image">
+              <img src={url} alt="Nasa Picture of the day." />
             </div>
-            <div className="Date">
-              <span>Date: {date}</span>
+            <div className="Details">
+              <div className="Title">
+                <span>{title}</span>
+              </div>
+              <div className="Date">
+                <span>Date: {date}</span>
+              </div>
+              <div className="Explanation">
+                <span> {explanation}</span>
+              </div>
             </div>
-            <div className="Explanation">
-              <span> {explanation}</span>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </Layout>
   );
 };
 export default Home;

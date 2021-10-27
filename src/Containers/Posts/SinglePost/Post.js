@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import "./Post.css";
+import Layout from "../../../Components/Layout/Layout";
 import Spinner from "../../../UI/Spinner/Spinner";
 
 const Posts = (props) => {
   const [post, setPost] = useState([]);
   const [comment, setComment] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      props.history.replace("/");
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,20 +55,22 @@ const Posts = (props) => {
   });
 
   return (
-    <div>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div>
-          <div className="blob"></div>
-          {posts}
-          <div className="Comments">
-            <span>COMMENTS:</span>
-            {comments}
+    <Layout>
+      <div>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div>
+            <div className="blob"></div>
+            {posts}
+            <div className="Comments">
+              <span>COMMENTS:</span>
+              {comments}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </Layout>
   );
 };
 export default Posts;

@@ -1,11 +1,17 @@
 import classes from "./NavBar.module.css";
 import NavigationItems from "../NavigationItems/NavigationItems";
+import { withRouter } from "react-router-dom";
 
 const NavBar = (props) => {
   let classArray = [classes.NavBar];
   if (!props.show) {
     classArray = [classes.NavBar, classes.Disappear];
   }
+
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    props.history.replace("/");
+  };
   return (
     <nav className={classArray.join(" ")}>
       {/* logo */}
@@ -44,8 +50,11 @@ const NavBar = (props) => {
         <NavigationItems link="/albums" classname="navigationItem">
           ALBUMS
         </NavigationItems>
+        <button className={classes.logout} onClick={logoutHandler}>
+          LOGOUT
+        </button>
       </div>
     </nav>
   );
 };
-export default NavBar;
+export default withRouter(NavBar);

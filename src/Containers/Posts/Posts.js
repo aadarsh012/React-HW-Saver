@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import Loading from "../../UI/ScheletonLoading/Loading";
+import Layout from "../../Components/Layout/Layout";
 import "./Posts.css";
 
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      props.history.replace("/");
+    }
+  });
+
   useEffect(() => {
     setLoading(true);
     window.scrollTo(0, 0);
@@ -31,9 +39,11 @@ const Posts = (props) => {
     );
   });
   return (
-    <div className="Posts">
-      {loading ? <Loading /> : <div className="PostsGrid">{postGrid}</div>}
-    </div>
+    <Layout>
+      <div className="Posts">
+        {loading ? <Loading /> : <div className="PostsGrid">{postGrid}</div>}
+      </div>
+    </Layout>
   );
 };
 export default Posts;

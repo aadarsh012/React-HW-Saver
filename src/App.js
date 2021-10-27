@@ -11,15 +11,15 @@ import Album from "./Containers/Albums/SingleAlbum/Album";
 function App() {
   return (
     <div className="App">
-      <Route path="/" exact component={Register} />
-      <Layout>
+      <Switch>
+        <Route path="/" exact component={Register} />
         <Route path="/home" exact component={Home} />
         <Route path="/images" exact component={Images} />
         <Route path="/posts" exact component={Posts} />
         <Route path="/posts/:id" exact component={Post} />
         <Route path="/albums" exact component={Albums} />
         <Route path="/albums/photos/:albumId" exact component={Album} />
-      </Layout>
+      </Switch>
     </div>
   );
 }
