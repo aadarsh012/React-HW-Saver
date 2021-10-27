@@ -20,7 +20,11 @@ const Posts = (props) => {
 
   const postGrid = posts.map((post, index) => {
     return (
-      <div className="Post" onClick={() => props.history.push(`/posts/${post.id}`)}>
+      <div
+        className="SinglePost"
+        onClick={() => props.history.push(`/posts/${post.id}`)}
+        key={index}
+      >
         <span className="title">{post.title}</span>
         <p className="body">{post.body}</p>
       </div>

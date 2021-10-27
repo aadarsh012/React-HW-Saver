@@ -1,0 +1,135 @@
+.blob {
+  position: absolute;
+  z-index: -1;
+  top: -35px;
+  height: 0;
+  width: 100%;
+  background-color: #88b14b;
+  border-radius: 0% 0% 50% 50% / 0% 0% 50% 50%;
+  animation: drop 0.5s ease-out forwards;
+}
+
+@keyframes drop {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 25em;
+  }
+}
+
+.Post {
+  margin: 20px 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Post span {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.Post p {
+  box-sizing: border-box;
+  padding: 5px 100px;
+  font-size: 18px;
+}
+
+.Comments {
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.Comments > span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Comment {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 20px;
+}
+
+.Comment .Name {
+  color: #88b14b;
+}
+
+.Comment .Email {
+  font-size: 14px;
+  color: #c4ebef;
+}
+
+.Comment p {
+  margin: 10px 20px;
+}
+
+@media (max-width: 800px) {
+  .Post span {
+    font-size: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .Post span {
+    font-size: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .Post span {
+    font-size: 20px;
+  }
+  .Post p {
+    font-size: 16px;
+    padding: 5px 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  @keyframes drop {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      height: 20em;
+    }
+  }
+  .blob {
+    border-radius: 0% 0% 50% 50% / 0% 0% 35% 35%;
+  }
+
+  .Post span {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+  .Post p {
+    font-size: 15px;
+    padding: 5px 25px;
+  }
+
+  .Comments {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Post {
+    margin: 10px 15px;
+  }
+  .Post span {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .Post p {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}

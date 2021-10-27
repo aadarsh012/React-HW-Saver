@@ -6,6 +6,8 @@ import Home from "./Containers/HomePage/Home";
 import Images from "./Containers/ImagesPage/Images";
 import Posts from "./Containers/Posts/Posts";
 import Post from "./Containers/Posts/SinglePost/Post";
+import Albums from "./Containers/Albums/Albums";
+import Album from "./Containers/Albums/SingleAlbum/Album";
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,8 @@ function App() {
         <Route path="/images" exact component={Images} />
         <Route path="/posts" exact component={Posts} />
         <Route path="/posts/:id" exact component={Post} />
+        <Route path="/albums" exact component={Albums} />
+        <Route path="/albums/photos/:albumId" exact component={Album} />
       </Layout>
     </div>
   );

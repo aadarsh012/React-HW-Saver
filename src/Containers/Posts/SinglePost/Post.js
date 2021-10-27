@@ -30,7 +30,7 @@ const Posts = (props) => {
 
   const posts = post.map((p, index) => {
     return (
-      <div key={index}>
+      <div key={index} className="Post">
         <span>{p.title}</span>
         <p>{p.body}</p>
       </div>
@@ -48,14 +48,17 @@ const Posts = (props) => {
   });
 
   return (
-    <div className="Post">
+    <div>
       {loading ? (
         <Spinner />
       ) : (
         <div>
           <div className="blob"></div>
           {posts}
-          <div className="Comments">{comments}</div>
+          <div className="Comments">
+            <span>COMMENTS:</span>
+            {comments}
+          </div>
         </div>
       )}
     </div>
