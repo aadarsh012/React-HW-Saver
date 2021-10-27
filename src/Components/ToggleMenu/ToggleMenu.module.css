@@ -5,9 +5,9 @@
   right: 35px;
   height: 10em;
   width: 9em;
-  background-color: #c4ebef;
-  border: 2px solid #229cb4;
-  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5), inset 1px 1px 3px 1px rgba(255, 255, 255, 1);
+  background-color: #0b0a10;
+  /* border: 2px solid #091a46; */
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.8), inset 0 0 3px 0px rgba(255, 255, 255, 1);
   border-radius: 5px;
   animation: toggle 0.3s linear both;
 }

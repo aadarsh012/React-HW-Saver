@@ -1,0 +1,117 @@
+.Images {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.Search {
+  display: flex;
+
+  flex-direction: column;
+  position: relative;
+  top: -1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search input {
+  background-color: #eff2f4;
+  width: 20em;
+  height: 2.5em;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.Search button {
+  position: relative;
+  left: -2.5em;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: #ffa42c;
+  color: #000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 2px;
+}
+
+.Search .Error {
+  color: #e73c35;
+}
+
+.Search input:focus {
+  width: 25em;
+}
+
+.Search input:focus ~ button {
+  left: 0;
+}
+
+.ImageGrid {
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-gap: 2em 2em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 20em;
+}
+
+.ImageGrid div {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0px rgba(255, 255, 255, 0.4);
+}
+
+.ImageGrid div img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.ImageGrid div img:hover {
+  transform: scale(110%);
+}
+
+@media (max-width: 700px) {
+  .ImageGrid {
+    grid-auto-rows: 15em;
+  }
+}
+@media (max-width: 600px) {
+  .ImageGrid {
+    grid-auto-rows: 13em;
+  }
+}
+
+@media (max-width: 500px) {
+  .Search input {
+    width: 15em;
+  }
+
+  .Search input:focus {
+    width: 20em;
+  }
+
+  .Search .Error {
+    font-size: 12px;
+  }
+  .ImageGrid {
+    grid-auto-rows: 11em;
+  }
+}
+
+@media (max-width: 400px) {
+  .ImageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 11em;
+  }
+}

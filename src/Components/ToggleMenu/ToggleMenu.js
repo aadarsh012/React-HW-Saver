@@ -6,17 +6,17 @@ const ToggleMenu = (props) => {
   if (props.show && !props.hide) {
     menu = (
       <div className={classes.ToggleMenu}>
-        <NavigationItems link="/" classname="toggleMenuItems">
+        <NavigationItems link="/home" classname="toggleMenuItems">
           HOME
         </NavigationItems>
-        <NavigationItems link="/all-products" classname="toggleMenuItems">
-          ALL PRODUCTS
+        <NavigationItems link="/images" classname="toggleMenuItems">
+          IMAGES
         </NavigationItems>
-        <NavigationItems link="/cart" classname="toggleMenuItems">
-          CART
+        <NavigationItems link="/posts" classname="toggleMenuItems">
+          POSTS
         </NavigationItems>
-        <NavigationItems link="/login" classname="toggleMenuItems">
-          LOGIN
+        <NavigationItems link="/albums" classname="toggleMenuItems">
+          ALBUMS
         </NavigationItems>
       </div>
     );

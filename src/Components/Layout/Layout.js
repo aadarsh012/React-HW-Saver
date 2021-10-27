@@ -42,7 +42,7 @@ const Layout = (props) => {
       <main className={classes.Main}>{props.children}</main>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

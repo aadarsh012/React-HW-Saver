@@ -51,12 +51,16 @@
   position: relative;
   width: 5.6em;
   height: 1.6em;
-  color: #229cb4;
+  color: #fe960f;
   font-size: 20px;
 }
 
 .toggleMenuItems:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.toggleMenuItems:hover a {
+  color: #0b0a10;
 }
 
 .sidedrawerMenu {
@@ -75,7 +79,7 @@
 
 .sidedrawerMenu a {
   display: inline-block;
-  color: #229cb4;
+  color: #091a46;
   font-size: 22px;
   width: 180px;
 }

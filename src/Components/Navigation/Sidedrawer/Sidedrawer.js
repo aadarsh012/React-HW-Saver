@@ -15,17 +15,17 @@ const Sidedrawer = (props) => {
     <>
       <Backdrop show={props.open} click={props.clicked} />
       <div className={classArray.join(" ")}>
-        <NavigationItems link="/" classname="sidedrawerMenu">
+        <NavigationItems link="/home" classname="sidedrawerMenu">
           HOME
         </NavigationItems>
-        <NavigationItems link="/all-products" classname="sidedrawerMenu">
-          ALL PRODUCTS
+        <NavigationItems link="/images" classname="sidedrawerMenu">
+          IMAGES
         </NavigationItems>
-        <NavigationItems link="/cart" classname="sidedrawerMenu">
-          CART
+        <NavigationItems link="/posts" classname="sidedrawerMenu">
+          POSTS
         </NavigationItems>
-        <NavigationItems link="/login" classname="sidedrawerMenu">
-          LOGIN
+        <NavigationItems link="/albums" classname="sidedrawerMenu">
+          ALBUMS
         </NavigationItems>
       </div>
     </>

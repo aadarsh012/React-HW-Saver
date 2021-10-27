@@ -1,4 +1,8 @@
 body {
   margin: 0;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Alfa Slab One", cursive;
   font-family: "Montserrat", sans-serif;
+  /* background-color: #eff2f4; */
+  background-color: #0b0a10;
 }

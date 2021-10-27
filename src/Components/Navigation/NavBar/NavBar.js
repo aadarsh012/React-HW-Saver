@@ -11,38 +11,38 @@ const NavBar = (props) => {
       {/* logo */}
       <div className={classes.Logo}>
         <a href="/">
-          M
+          R
           <div>
             <div></div>
             <div></div>
             <div></div>
           </div>
-          RN-CART
+          ACT-STARS
         </a>
         <div className={classes.mobile_Logo}>
-          M
+          R
           <div className={classes.ToggleSideDrawer} onClick={props.clicked}>
             <div></div>
             <div></div>
             <div></div>
           </div>
-          RN-CART
+          ACT-STARS
         </div>
       </div>
 
       {/* Navigation Items */}
       <div className={classes.NavigationItems}>
-        <NavigationItems link="/" classname="navigationItem">
+        <NavigationItems link="/home" classname="navigationItem">
           HOME
         </NavigationItems>
-        <NavigationItems link="/all-products" classname="navigationItem">
-          ALL PRODUCTS
+        <NavigationItems link="/images" classname="navigationItem">
+          IMAGES
         </NavigationItems>
-        <NavigationItems link="/cart" classname="navigationItem">
-          CART
+        <NavigationItems link="/posts" classname="navigationItem">
+          POSTS
         </NavigationItems>
-        <NavigationItems link="/login" classname="navigationItem">
-          LOGIN
+        <NavigationItems link="/albums" classname="navigationItem">
+          ALBUMS
         </NavigationItems>
       </div>
     </nav>

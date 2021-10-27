@@ -48,7 +48,7 @@ const Register = (props) => {
         );
         localStorage.setItem("token", response.data.idToken);
       } catch (error) {
-        setError("Email Exists. Please Login.");
+        setError("Email exists. Please Login.");
         setTimeout(() => {
           setError("");
         }, 3000);
