@@ -89,13 +89,13 @@
 
 @media (max-width: 500px) {
   .Register .registerForm {
-    height: 23em;
-    width: 23em;
+    height: 24em;
+    width: 24em;
   }
 
   .Register .loginForm {
-    height: 20em;
-    width: 23em;
+    height: 21em;
+    width: 24em;
   }
 
   .Register button {
@@ -116,8 +116,8 @@
   }
 
   .Register .loginForm {
-    height: 18em;
-    width: 20em;
+    height: 19em;
+    width: 22em;
   }
 
   .Register button {

@@ -1,6 +1,7 @@
 import classes from "./Sidedrawer.module.css";
 import Backdrop from "../../../UI/Backdrop/Backdrop";
 import NavigationItems from "../NavigationItems/NavigationItems";
+import { withRouter } from "react-router-dom";
 
 const Sidedrawer = (props) => {
   let classArray = [classes.Sidedrawer, classes.Close];
@@ -11,6 +12,10 @@ const Sidedrawer = (props) => {
     classArray = [classes.Sidedrawer, classes.Close];
   }
 
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    props.history.replace("/");
+  };
   return (
     <>
       <Backdrop show={props.open} click={props.clicked} />
@@ -27,8 +32,11 @@ const Sidedrawer = (props) => {
         <NavigationItems link="/albums" classname="sidedrawerMenu">
           ALBUMS
         </NavigationItems>
+        <button className={classes.logout} onClick={logoutHandler}>
+          LOGOUT
+        </button>
       </div>
     </>
   );
 };
-export default Sidedrawer;
+export default withRouter(Sidedrawer);
