@@ -5,6 +5,18 @@
   grid-gap: 2em 2em;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 15em;
+  animation: posts 0.5s linear forwards;
+}
+
+@keyframes posts {
+  0% {
+    opacity: 0;
+    transform: translateY(0.2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .PostsGrid div {
@@ -13,7 +25,8 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: #d993ab;
+  /* background-color: #d993ab; */
+  background-color: #88b14b;
   box-sizing: border-box;
   padding: 10px;
   cursor: pointer;
@@ -28,7 +41,7 @@
 }
 
 .body {
-  color: #5a4f9b;
+  color: #091a46;
 }
 
 @media (max-width: 800px) {

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Layout from "./Components/Layout/Layout";
+
 import Register from "./Containers/WelcomePage/Register/Register";
 import Home from "./Containers/HomePage/Home";
 import Images from "./Containers/ImagesPage/Images";
@@ -8,6 +8,7 @@ import Posts from "./Containers/Posts/Posts";
 import Post from "./Containers/Posts/SinglePost/Post";
 import Albums from "./Containers/Albums/Albums";
 import Album from "./Containers/Albums/SingleAlbum/Album";
+import { useEffect } from "react";
 function App() {
   return (
     <div className="App">

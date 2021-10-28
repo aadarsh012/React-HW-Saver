@@ -32,9 +32,8 @@ const Albums = (props) => {
         onClick={() => props.history.push(`/albums/photos/${album.id}`)}
         key={index}
       >
-        <span className="title">
-          {album.id}. {album.title}
-        </span>
+        <i>{album.id}.</i>
+        <span className="title">{album.title}</span>
       </div>
     );
   });
