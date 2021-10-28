@@ -25,7 +25,6 @@ const Home = (props) => {
         "https://api.nasa.gov/planetary/apod?api_key=HjehelaDbzNgXZlFW3i6iiJu0NGfaCnniMCE3TIq"
       );
       data = await data.json();
-      console.log(data);
       setTitle(data.title);
       setExplanation(data.explanation);
       setUrl(data.url);

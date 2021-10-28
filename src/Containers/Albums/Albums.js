@@ -19,7 +19,6 @@ const Albums = (props) => {
     const fetchAlbums = async () => {
       let data = await fetch(`https://jsonplaceholder.typicode.com/albums`);
       data = await data.json();
-      console.log(data);
       setAlbums(data);
       setLoading(false);
     };

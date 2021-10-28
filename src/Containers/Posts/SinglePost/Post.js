@@ -28,8 +28,6 @@ const Posts = (props) => {
       );
       comments = await comments.json();
       setComment(comments);
-      console.log(data);
-      console.log(comments);
       setLoading(false);
     };
     fetchPost();

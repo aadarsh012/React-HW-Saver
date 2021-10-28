@@ -20,7 +20,6 @@ const Posts = (props) => {
       let data = await fetch("https://jsonplaceholder.typicode.com/posts");
       data = await data.json();
       setPosts(data);
-      console.log(data);
       setLoading(false);
     };
     fetchPosts();

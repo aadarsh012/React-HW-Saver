@@ -8,7 +8,6 @@ const Images = (props) => {
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log(props);
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -31,7 +30,6 @@ const Images = (props) => {
       if (data.total === 0) {
         setError("No Results Found.");
       }
-      console.log(data);
       setLoading(false);
     };
     fetchImages();

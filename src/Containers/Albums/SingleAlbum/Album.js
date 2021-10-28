@@ -20,13 +20,11 @@ const Album = (props) => {
         `https://jsonplaceholder.typicode.com/albums?id=${props.match.params.albumId}`
       );
       data = await data.json();
-      console.log(data);
       let photos = await fetch(
         `https://jsonplaceholder.typicode.com/photos?albumId=${props.match.params.albumId}`
       );
       photos = await photos.json();
       setPhotos(photos);
-      console.log(photos);
       setLoading(false);
     };
     fetchAlbum();
