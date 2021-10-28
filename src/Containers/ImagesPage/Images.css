@@ -104,7 +104,9 @@
     font-size: 12px;
   }
   .ImageGrid {
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 11em;
+    grid-gap: 1em 1em;
   }
 }
 
@@ -112,5 +114,6 @@
   .ImageGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 11em;
+    grid-gap: 0.5em 0.5em;
   }
 }

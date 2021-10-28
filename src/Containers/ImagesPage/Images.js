@@ -62,7 +62,7 @@ const Images = (props) => {
     } else {
       return (
         <div className="Img" key={index}>
-          <img src={img.urls.full} alt="unsplash" />
+          <img src={img.urls.small} alt="unsplash" />
         </div>
       );
     }
