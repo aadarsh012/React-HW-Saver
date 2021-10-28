@@ -13,14 +13,19 @@
 
 .Register form {
   box-sizing: border-box;
-  background-color: #0b0a10;
+  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* background-color: #0b0a10; */
+  border-radius: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   animation: form 0.5s linear forwards;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
 }
 
 .Register .registerForm {
@@ -75,7 +80,8 @@
 }
 
 .switchAuth {
-  color: #5a4f9b;
+  /* color: #5a4f9b; */
+  color: #d993ab;
   cursor: pointer;
 }
 
