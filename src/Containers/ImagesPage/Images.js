@@ -16,6 +16,7 @@ const Images = (props) => {
   });
 
   useEffect(() => {
+    document.title = "Search Images";
     window.scrollTo(0, 0);
     setError("");
     setLoading(true);

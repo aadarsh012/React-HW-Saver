@@ -14,8 +14,9 @@ const Posts = (props) => {
   });
 
   useEffect(() => {
-    setLoading(true);
+    document.title = "Posts";
     window.scrollTo(0, 0);
+    setLoading(true);
     const fetchPosts = async () => {
       let data = await fetch("https://jsonplaceholder.typicode.com/posts");
       data = await data.json();

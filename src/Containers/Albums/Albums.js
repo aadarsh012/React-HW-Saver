@@ -14,6 +14,7 @@ const Albums = (props) => {
   });
 
   useEffect(() => {
+    document.title = "Albums";
     window.scrollTo(0, 0);
     setLoading(true);
     const fetchAlbums = async () => {

@@ -18,6 +18,7 @@ const Home = (props) => {
   });
 
   useEffect(() => {
+    document.title = "Homepage";
     window.scrollTo(0, 0);
     setLoading(true);
     const fetchNasaAPI = async () => {

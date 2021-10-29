@@ -23,6 +23,7 @@ const Register = (props) => {
     setUsername("");
     setPassword("");
     setConfirmPassword("");
+    document.title = isSignup ? "Register" : "Login";
   }, [isSignup]);
 
   const switcAuthHandler = () => {

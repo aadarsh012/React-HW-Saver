@@ -15,6 +15,7 @@ const Posts = (props) => {
   });
 
   useEffect(() => {
+    document.title = "Comments";
     window.scrollTo(0, 0);
     setLoading(true);
     const fetchPost = async () => {
