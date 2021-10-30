@@ -2,6 +2,7 @@ import "./Images.css";
 import { useEffect, useState } from "react";
 import Layout from "../../Components/Layout/Layout";
 import Spinner from "../../UI/Spinner/Spinner";
+import { connect } from "react-redux";
 
 const Images = (props) => {
   const [urls, setUrls] = useState([]);
@@ -10,10 +11,10 @@ const Images = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!props.token) {
       props.history.replace("/");
     }
-  });
+  }, [props.token, props.history]);
 
   useEffect(() => {
     document.title = "Search Images";
@@ -89,7 +90,13 @@ const Images = (props) => {
     </Layout>
   );
 };
-export default Images;
-//  https://api.unsplash.com/search/photos/?query=space
 
-//cXrE78i9mpNC00_KikdMu-SPaznzPkj-yVv2znQkOyg
+const mapStateToProps = (state) => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(mapStateToProps)(Images);
+
+//  https://api.unsplash.com/search/photos/?query=space

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Loading from "../../UI/ScheletonLoading/Loading";
+import { connect } from "react-redux";
 import Layout from "../../Components/Layout/Layout";
 import "./Posts.css";
 
@@ -8,10 +9,10 @@ const Posts = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!props.token) {
       props.history.replace("/");
     }
-  });
+  }, [props.token, props.history]);
 
   useEffect(() => {
     document.title = "Posts";
@@ -46,4 +47,10 @@ const Posts = (props) => {
     </Layout>
   );
 };
-export default Posts;
+const mapStateToProps = (state) => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(mapStateToProps)(Posts);

@@ -1,6 +1,7 @@
 import classes from "./NavBar.module.css";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../../../store/actions/actionCreators";
 
 const NavBar = (props) => {
   let classArray = [classes.NavBar];
@@ -9,8 +10,7 @@ const NavBar = (props) => {
   }
 
   const logoutHandler = () => {
-    localStorage.removeItem("token");
-    props.history.replace("/");
+    props.onLogout();
   };
   return (
     <nav className={classArray.join(" ")}>
@@ -50,6 +50,9 @@ const NavBar = (props) => {
         <NavigationItems link="/albums" classname="navigationItem">
           ALBUMS
         </NavigationItems>
+        {/* <NavigationItems link="/logout" classname="navigationItem">
+          LOGOUT
+        </NavigationItems> */}
         <button className={classes.logout} onClick={logoutHandler}>
           LOGOUT
         </button>
@@ -57,4 +60,11 @@ const NavBar = (props) => {
     </nav>
   );
 };
-export default withRouter(NavBar);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogout: () => dispatch(logout())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(NavBar);

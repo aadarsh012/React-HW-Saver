@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import classes from "./Album.module.css";
 import Layout from "../../../Components/Layout/Layout";
 import Loading from "../../../UI/ScheletonLoading/Loading";
+import { connect } from "react-redux";
 const Album = (props) => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!props.token) {
       props.history.replace("/");
     }
-  });
+  }, [props.token, props.history]);
 
   useEffect(() => {
     document.title = "Photos";
@@ -29,12 +30,12 @@ const Album = (props) => {
       setLoading(false);
     };
     fetchAlbum();
-  }, []);
+  }, [props.match.params.albumId]);
 
   const photosGrid = photos.map((photo, index) => {
     return (
       <div className={classes.Photo}>
-        <img src={photo.url} />
+        <img src={photo.url} alt="" />
       </div>
     );
   });
@@ -47,4 +48,11 @@ const Album = (props) => {
     </Layout>
   );
 };
-export default Album;
+
+const mapStateToProps = (state) => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(mapStateToProps)(Album);

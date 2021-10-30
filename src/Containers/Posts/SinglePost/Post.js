@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Post.css";
 import Layout from "../../../Components/Layout/Layout";
+import { connect } from "react-redux";
 import Spinner from "../../../UI/Spinner/Spinner";
 
 const Posts = (props) => {
@@ -9,10 +10,10 @@ const Posts = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!props.token) {
       props.history.replace("/");
     }
-  });
+  }, [props.token, props.history]);
 
   useEffect(() => {
     document.title = "Comments";
@@ -32,7 +33,7 @@ const Posts = (props) => {
       setLoading(false);
     };
     fetchPost();
-  }, []);
+  }, [props.match.params.id]);
 
   const posts = post.map((p, index) => {
     return (
@@ -46,7 +47,10 @@ const Posts = (props) => {
   const comments = comment.map((c, index) => {
     return (
       <div className="Comment" key={index}>
-        <span className="Name">{c.name}</span>
+        <span className="Name">
+          <span className="DP">{c.name[0].toUpperCase()}</span>
+          {c.name}
+        </span>
         <span className="Email">{c.email}</span>
         <p>{c.body}</p>
       </div>
@@ -72,4 +76,10 @@ const Posts = (props) => {
     </Layout>
   );
 };
-export default Posts;
+const mapStateToProps = (state) => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(mapStateToProps)(Posts);

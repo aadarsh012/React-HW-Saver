@@ -1,7 +1,8 @@
 import classes from "./Sidedrawer.module.css";
 import Backdrop from "../../../UI/Backdrop/Backdrop";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../../../store/actions/actionCreators";
 
 const Sidedrawer = (props) => {
   let classArray = [classes.Sidedrawer, classes.Close];
@@ -14,7 +15,7 @@ const Sidedrawer = (props) => {
 
   const logoutHandler = () => {
     localStorage.removeItem("token");
-    props.history.replace("/");
+    props.onLogout();
   };
   return (
     <>
@@ -39,4 +40,11 @@ const Sidedrawer = (props) => {
     </>
   );
 };
-export default withRouter(Sidedrawer);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogout: () => dispatch(logout())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Sidedrawer);
